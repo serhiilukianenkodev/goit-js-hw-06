@@ -4,13 +4,21 @@ const refs = {
     valueFieldEl: document.querySelector('#value'),
 }
 
+let counterValue = refs.valueFieldEl.textContent;
+
 refs.decrementBtnEl.addEventListener('click', onDecrementBtnHandler);
 refs.incrementBtnEl.addEventListener('click', onincrementBtnHandler);
 
 function onDecrementBtnHandler() {
-    refs.valueFieldEl.textContent = Number(refs.valueFieldEl.textContent) - 1;   
-};
+    counterValue = Number(counterValue) - 1;  
+    setTextContent(counterValue, refs.valueFieldEl);
+}
 
 function onincrementBtnHandler() {
-    refs.valueFieldEl.textContent = Number(refs.valueFieldEl.textContent) + 1;   
-};
+    counterValue = Number(counterValue) + 1;   
+    setTextContent(counterValue, refs.valueFieldEl);
+}
+
+function setTextContent(value, ref) {
+    ref.textContent = value;
+}
