@@ -6,7 +6,7 @@ const refs = {
 }
 
 refs.createBtnEl.addEventListener('click', onCreateBtnClick);
-refs.destroyBtnEl.addEventListener('click', onDestroyBtnClick);
+refs.destroyBtnEl.addEventListener('click', destroyBoxes);
 
 
 function onCreateBtnClick() {
@@ -14,7 +14,7 @@ function onCreateBtnClick() {
   createBoxes(amount);
 }
 
-function onDestroyBtnClick() {
+function destroyBoxes() {
   // refs.inputAmoutEl.value = 0;
   refs.targetDivEl.innerHTML = '';
 
