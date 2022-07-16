@@ -8,22 +8,24 @@ const refs = {
 refs.createBtnEl.addEventListener('click', onCreateBtnClick);
 refs.destroyBtnEl.addEventListener('click', destroyBoxes);
 
+let currentMeas = 0;
+
 
 function onCreateBtnClick() {
   const amount = refs.inputAmoutEl.value
-  createBoxes(amount);
+  createBoxes(amount, currentMeas);
 }
 
 function destroyBoxes() {
-  // refs.inputAmoutEl.value = 0;
   refs.targetDivEl.innerHTML = '';
-
+  currentMeas = 0;
 }
 
-function createBoxes(amount) {
+function createBoxes(amount, startMeas) {
   const collection = [];
   for (let i = 0; i < amount; i += 1){
-    const meas = 30 + i * 10;
+    const meas = 30 + i * 10 + startMeas;
+    currentMeas = meas
     const color = getRandomHexColor();
     let boxMarkup = `<div style = "width: ${meas}px; height: ${meas}px; background-color: ${color};"></div>`
     

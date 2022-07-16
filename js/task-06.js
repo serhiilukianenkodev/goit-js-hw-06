@@ -6,7 +6,7 @@ function onInputBlurHandler(event) {
     const valeuLength = event.currentTarget.value.length;
     const valueData = event.currentTarget.dataset.length;
 
-    if ((valeuLength >= valueData)) {
+    if ((valeuLength == valueData)) {
             inputEl.classList.add('valid');
             inputEl.classList.remove('invalid');
         } else {
