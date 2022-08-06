@@ -8,7 +8,7 @@ const refs = {
 refs.createBtnEl.addEventListener('click', onCreateBtnClick);
 refs.destroyBtnEl.addEventListener('click', destroyBoxes);
 
-let currentMeas = 0;
+let currentMeas = 30;
 
 
 function onCreateBtnClick() {
@@ -18,16 +18,16 @@ function onCreateBtnClick() {
 
 function destroyBoxes() {
   refs.targetDivEl.innerHTML = '';
-  currentMeas = 0;
+  currentMeas = 30;
 }
 
 function createBoxes(amount, startMeas) {
   const collection = [];
   for (let i = 0; i < amount; i += 1){
-    const meas = 30 + i * 10 + startMeas;
-    currentMeas = meas
+    const size = i * 10 + startMeas;
+    currentMeas = size + 10
     const color = getRandomHexColor();
-    let boxMarkup = `<div style = "width: ${meas}px; height: ${meas}px; background-color: ${color};"></div>`
+    let boxMarkup = `<div style = "width: ${size}px; height: ${size}px; background-color: ${color};"></div>`
     
     collection.push(boxMarkup);
   }
